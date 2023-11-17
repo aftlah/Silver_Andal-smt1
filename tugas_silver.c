@@ -21,7 +21,6 @@ bonus(bota)
 */
 int main()
 {
-
     char alt[30], *frat[] = {"Gorengan 1 pcs", "Es Kopi"};
     int tap, al, nul, tah, top, tat, taf;
     float lah, ama, takon, tabe, akem;
@@ -69,19 +68,23 @@ int main()
         }
         else
         {
-            if (top == 1)
+            switch (top)
             {
+            case 1:
                 ama += 20000;
-            }
-            else if (top == 2)
-            {
+                break;
+
+            case 2:
                 ama += 15000;
-            }
-            else if (top == 3)
-            {
+                break;
+
+            case 3:
                 ama += 18000;
+                break;
+
+            default:
+                break;
             }
-            break;
         }
 
     case 2:
@@ -98,19 +101,22 @@ int main()
         }
         else
         {
-            if (al == 1)
+            switch (al)
             {
+            case 1:
                 ama += 5000;
-            }
-            else if (al == 2)
-            {
+                break;
+
+            case 2:
                 ama += 6000;
-            }
-            else if (al == 3)
-            {
+                break;
+
+            case 3:
                 ama += 4000;
+                break;
+            default:
+                break;
             }
-            break;
         }
 
     case 3:
@@ -127,19 +133,20 @@ int main()
         }
         else
         {
-            if (nul == 1)
+            switch (nul)
             {
+            case 1:
                 ama += 2500;
-            }
-            else if (nul == 2)
-            {
+                break;
+            case 2:
                 ama += 5000;
-            }
-            else if (nul == 3)
-            {
+                break;
+            case 3:
                 ama += 7000;
+                break;
+            default:
+                break;
             }
-            break;
         }
 
     default:
@@ -150,7 +157,7 @@ int main()
     printf("Masukkan jumlah pesanan: ");
     scanf("%i", &tap);
 
-    // total belanja(tat) Done
+    // total belanja
     tat = ama * tap;
     printf("Total belanja: %i\n", tat);
 
@@ -182,22 +189,22 @@ int main()
     }
 
     printf("\n\n================================================================\n\n");
-    printf("Nama Pelanggan : %s\n", alt);
-    printf("Jumlah Pesanan : %i\n", tap);
-    printf("Total Belanja  : %i\n", tat);
-    printf("Diskon         : %1.f\n", takon);
+    printf("Nama Pelanggan\t: %s\n", alt);
+    printf("Jumlah Pesanan\t: %i\n", tap);
+    printf("Total Belanja\t: %i\n", tat);
+    printf("Diskon\t\t: %1.f\n", takon);
 
     if (tah == 1)
     {
         if (top == 1)
         {
-            printf("Bonus          : %s\n", frat[0]);
+            printf("Bonus\t\t: %s\n", frat[0]);
         }
         else if (tah == 2)
         {
             if (al == 1)
             {
-                printf("Bonus          : %s\n", frat[0]);
+                printf("Bonus\t\t: %s\n", frat[0]);
             }
         }
     }
@@ -207,15 +214,15 @@ int main()
         {
             if (tap >= 20)
             {
-                printf("Free           : %s\n", frat[1]);
+                printf("Free\t\t: %s\n", frat[1]);
             }
         }
     }
-    printf("Total Bayar    : %0.f\n", tabe);
+    printf("Total Bayar\t: %0.f\n", tabe);
     printf("\n================================================================\n");
     if (lah >= tabe)
     {
-        printf("\nUang kembalian: %0.f\n", akem);
+        printf("\nUang kembalian\t: %0.f\n", akem);
     }
     else
     {
